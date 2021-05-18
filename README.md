@@ -1,4 +1,4 @@
-[![Build OpenWrt](https://github.com/minax007/XIAOMI_MI-4_OpenWrt/actions/workflows/build-openwrt-mi4.yml/badge.svg)](https://github.com/minax007/XIAOMI_MI-4_OpenWrt/actions/workflows/build-openwrt-mi4.yml)
+[![Build OpenWrt](https://github.com/minax007/XIAOMI_MI-4_OpenWrt/actions/workflows/build-openwrt.yml/badge.svg)](https://github.com/minax007/XIAOMI_MI-4_OpenWrt/actions/workflows/build-openwrt.yml)
 [![release](https://img.shields.io/github/v/release/minax007/XIAOMI_MI-4_OpenWrt.svg)](https://github.com/minax007/XIAOMI_MI-4_OpenWrt/releases)
 
 # OpenWrt snapshot for Xiaomi Mi-4 (R4) incl. LuCI
