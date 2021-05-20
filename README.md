@@ -5,7 +5,7 @@
 
 This GitHub action is to build fresh images of latest OpenWrt snapshot for the Mi-4 using imagebuilder.
 
-![grafik](https://user-images.githubusercontent.com/67478561/118937682-107ac100-b94e-11eb-8965-52671756bca1.png)
+![grafik](https://user-images.githubusercontent.com/67478561/118937926-58014d00-b94e-11eb-8d27-e0897c5bd5eb.png)
 
 Following packages are already installed, so that you do not need to install them via the command line afterwards: 
 
