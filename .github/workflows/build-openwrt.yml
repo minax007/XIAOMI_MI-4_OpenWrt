@@ -13,8 +13,9 @@ env:
   SUBTARGET: "mt7621"
   PROFILE: "xiaomi_mi-router-4"
   PACKAGES_TYPE1: "luci luci-theme-material luci-app-nlbwmon luci-app-sqm"
-  PACKAGES_TYPE2: "luci luci-theme-material luci-app-nlbwmon luci-app-sqm wpad-mesh-wolfssl -wpad-basic-wolfssl"
-  
+ # PACKAGES_TYPE2: "luci luci-theme-material luci-app-nlbwmon luci-app-sqm wpad-mesh-wolfssl -wpad-basic-wolfssl"
+  PACKAGES_TYPE2: "luci-proto-wireguard luci-app-wireguard luci-app-nextdns nextdns luci wpad-mesh-wolfssl iperf3 mtr iwinfo kmod-tcp-bbr kmod-mtd-rw libustream-wolfssl ca-bundle -luci-proto-ppp -ppp -ppp-mod-pppoe -kmod-pppox -kmod-pppoe -kmod-ppp -wpad-basic-wolfssl"
+
 jobs:
   build:
     runs-on: ubuntu-latest
