@@ -15,7 +15,7 @@ Added features | Package names
 **LuCI Material Theme** | luci-theme-material 
 **LuCI Bandwidth Monitor** | luci-app-nlbwmon
 **LuCI SQM (QoS)** | luci-app-sqm
-**LuCI Adblock with DNS reporting** | luci-app-adblock & tcpdump & curl
+**LuCI Adblock with DNS reporting** | luci-app-adblock & tcpdump-mini & curl
 __________________________________________________________________
 **Official OpenWrt snapshot of Mi-4 build without LuCI:**
 
