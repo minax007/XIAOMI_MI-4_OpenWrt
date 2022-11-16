@@ -12,8 +12,7 @@ env:
   BOARD: "ramips"
   SUBTARGET: "mt7621"
   PROFILE: "xiaomi_mi-router-4"
-  PACKAGES_TYPE1: "luci luci-theme-material luci-app-adblock tcpdump curl luci-app-nlbwmon luci-app-sqm"
-#  PACKAGES_TYPE2: "luci luci-theme-material luci-app-nlbwmon luci-app-sqm wpad-mesh-wolfssl mtr kmod-tcp-bbr kmod-mtd-rw libustream-wolfssl ca-bundle -luci-proto-ppp -ppp -ppp-mod-pppoe -kmod-pppox -kmod-pppoe -kmod-ppp -wpad-basic-wolfssl"
+  PACKAGES_TYPE1: "luci luci-theme-material luci-app-nlbwmon luci-app-sqm tcpdump-mini curl luci-app-adblock"
   PACKAGES_TYPE2: "luci luci-theme-material luci-app-nlbwmon luci-app-sqm wpad-mesh-wolfssl mtr -wpad-basic-wolfssl"
 
 jobs:
@@ -76,7 +75,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+        upload_url: ${{ steps.create_release.outputs.upload_url }} 
         asset_path: openwrt/OpenWrt_Mi4_${{ env.OPENWRT_VERSION }}_sysupgrade.bin
         asset_name: OpenWrt_Mi4_${{ env.OPENWRT_VERSION }}_sysupgrade.bin
         asset_content_type: application/bin
@@ -87,7 +86,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+        upload_url: ${{ steps.create_release.outputs.upload_url }} 
         asset_path: openwrt/OpenWrt_Mi4_${{ env.OPENWRT_VERSION }}_MESH_sysupgrade.bin
         asset_name: OpenWrt_Mi4_${{ env.OPENWRT_VERSION }}_MESH_sysupgrade.bin
         asset_content_type: application/bin
