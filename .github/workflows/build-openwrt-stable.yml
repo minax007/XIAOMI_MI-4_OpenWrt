@@ -1,4 +1,4 @@
-name: Build OpenWrt
+name: Build OpenWrt based on stable release
 
 on:
 #  schedule:
