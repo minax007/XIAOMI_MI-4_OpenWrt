@@ -12,8 +12,8 @@ env:
   BOARD: "ramips"
   SUBTARGET: "mt7621"
   PROFILE: "xiaomi_mi-router-4"
-  PACKAGES_TYPE1: "luci luci-theme-material luci-app-nlbwmon luci-app-sqm tcpdump-mini curl luci-app-adblock"
-  PACKAGES_TYPE2: "luci luci-theme-material luci-app-nlbwmon luci-app-sqm wpad-mesh-wolfssl mtr -wpad-basic-wolfssl"
+  PACKAGES_TYPE1: "luci luci-theme-material luci-app-nlbwmon luci-app-sqm tcpdump curl luci-app-adblock"
+#  PACKAGES_TYPE2: "luci luci-theme-material luci-app-nlbwmon luci-app-sqm wpad-mesh-wolfssl mtr -wpad-basic-wolfssl"
 
 jobs:
   build:
@@ -49,12 +49,13 @@ jobs:
         cd openwrt
         make image PROFILE="${{ env.PROFILE }}" PACKAGES="${{ env.PACKAGES_TYPE1 }}"
         mv bin/targets/${{ env.BOARD }}/${{ env.SUBTARGET }}/openwrt-ramips-mt7621-xiaomi_mi-router-4-squashfs-sysupgrade.bin OpenWrt_Mi4_${{ env.OPENWRT_VERSION }}_sysupgrade.bin
-    - name: Build the image of type 2
-      id: type2
-      run: |
-        cd openwrt
-        make image PROFILE="${{ env.PROFILE }}" PACKAGES="${{ env.PACKAGES_TYPE2 }}"
-        mv bin/targets/${{ env.BOARD }}/${{ env.SUBTARGET }}/openwrt-ramips-mt7621-xiaomi_mi-router-4-squashfs-sysupgrade.bin OpenWrt_Mi4_${{ env.OPENWRT_VERSION }}_MESH_sysupgrade.bin
+ #   - name: Build the image of type 2
+ #     id: type2
+ #     run: |
+ #       cd openwrt
+ #       make image PROFILE="${{ env.PROFILE }}" PACKAGES="${{ env.PACKAGES_TYPE2 }}"
+ #       mv bin/targets/${{ env.BOARD }}/${{ env.SUBTARGET }}/openwrt-ramips-mt7621-xiaomi_mi-router-4-squashfs-sysupgrade.bin OpenWrt_Mi4_${{ env.OPENWRT_VERSION }}_MESH_sysupgrade.bin
+
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
@@ -80,13 +81,13 @@ jobs:
         asset_name: OpenWrt_Mi4_${{ env.OPENWRT_VERSION }}_sysupgrade.bin
         asset_content_type: application/bin
 
-    - name: Upload type2 Asset
-      id: upload-release-asset-type2
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }} 
-        asset_path: openwrt/OpenWrt_Mi4_${{ env.OPENWRT_VERSION }}_MESH_sysupgrade.bin
-        asset_name: OpenWrt_Mi4_${{ env.OPENWRT_VERSION }}_MESH_sysupgrade.bin
-        asset_content_type: application/bin
+#    - name: Upload type2 Asset
+#      id: upload-release-asset-type2
+#      uses: actions/upload-release-asset@v1
+#      env:
+#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      with:
+#        upload_url: ${{ steps.create_release.outputs.upload_url }} 
+#        asset_path: openwrt/OpenWrt_Mi4_${{ env.OPENWRT_VERSION }}_MESH_sysupgrade.bin
+#        asset_name: OpenWrt_Mi4_${{ env.OPENWRT_VERSION }}_MESH_sysupgrade.bin
+#        asset_content_type: application/bin
