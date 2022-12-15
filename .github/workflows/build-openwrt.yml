@@ -12,7 +12,7 @@ env:
   BOARD: "ramips"
   SUBTARGET: "mt7621"
   PROFILE: "xiaomi_mi-router-4"
-  PACKAGES_TYPE1: "luci luci-theme-material luci-app-nlbwmon luci-app-sqm tcpdump curl luci-app-adblock"
+  PACKAGES_TYPE1: "luci luci-theme-material dockerd luci-app-dockerman" # luci-app-nlbwmon luci-app-sqm tcpdump curl luci-app-adblock
 #  PACKAGES_TYPE2: "luci luci-theme-material luci-app-nlbwmon luci-app-sqm wpad-mesh-wolfssl mtr -wpad-basic-wolfssl"
 
 jobs:
