@@ -3,3 +3,7 @@ https://github.com/minax007/packages/raw/main/current/luci-app-cpu-status-mini_0
 https://github.com/minax007/packages/raw/main/current/luci-app-access-control_0.4.3_all.ipk
 
 https://github.com/minax007/packages/raw/main/current/luci-app-temp-status_0.3-5_all.ipk
+
+https://github.com/minax007/packages/raw/main/current/internet-detector_0.6-0_all.ipk
+
+https://github.com/minax007/packages/raw/main/current/luci-app-internet-detector_0.6-0_all.ipk
