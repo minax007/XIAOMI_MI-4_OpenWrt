@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  VERSION: "22.03.2"
+  VERSION: "22.03.3"
   BOARD: "ramips"
   SUBTARGET: "mt7621"
   PROFILE: "xiaomi_mi-router-4"
@@ -47,7 +47,7 @@ jobs:
     - name: Include External ipk-Packages
       run: |
         wget -O packages.txt https://github.com/minax007/packages/raw/main/external-package-urls.txt
-        cat packages.txt | xargs wget -P /mnt/workdir/openwrt-imagebuilder-${{ env.BOARD }}-${{ env.SUBTARGET }}.Linux-x86_64/packages
+        cat packages.txt | xargs wget -P /mnt/workdir/openwrt-imagebuilder-${{ env.VERSION }}-${{ env.BOARD }}-${{ env.SUBTARGET }}.Linux-x86_64/packages    
     
     - name: Build the image of type 1
       id: type1
