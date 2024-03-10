@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  VERSION: "22.03.3"
+  VERSION: "23.05.2"
   BOARD: "ramips"
   SUBTARGET: "mt7621"
   PROFILE: "xiaomi_mi-router-4"
